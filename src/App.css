@@ -21,29 +21,42 @@
   font-size: 5rem;
 }
 
-.numberButton {
-  background-color: #253571;
+.button {
   color: white;
   border-radius: 100000px;
-  width: 50px;
-  height: 50px;
+  width: 120px;
+  height: 120px;
   margin: 5px;
+  font-size: 32px;
+}
+
+.numberButton {
+  background-color: #253571;
 }
 
 .specialButton {
   background-color: #4054a0;
-  color: white;
-  border-radius: 100000px;
-  width: 50px;
-  height: 50px;
-  margin: 5px;
 }
 
 .operatorButton {
   background-color: #35718d;
-  color: white;
-  border-radius: 100000px;
-  width: 50px;
-  height: 50px;
-  margin: 5px;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-buttons {
+  display: flex;
+  margin-top: 32px;
+}
+
+.operators {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }

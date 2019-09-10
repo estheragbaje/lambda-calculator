@@ -10,7 +10,7 @@ import React from "react";
 
 function OperatorButton(props) {
   const { char, value } = props;
-  return <button className="operatorButton">{char}</button>;
+  return <button className="button operatorButton">{char}</button>;
 }
 
 export default OperatorButton;

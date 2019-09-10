@@ -23,9 +23,13 @@ function App() {
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display display={0} />
-        <Specials />
-        <Numbers />
-        <Operators />
+        <div className="all-buttons">
+          <div className="special-numbers">
+            <Specials />
+            <Numbers />
+          </div>
+          <Operators />
+        </div>
       </div>
     </div>
   );

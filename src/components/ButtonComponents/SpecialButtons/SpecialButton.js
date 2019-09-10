@@ -11,7 +11,7 @@ import React from "react";
 
 function SpecialButton(props) {
   const { specialCharacters } = props;
-  return <button className="specialButton">{specialCharacters}</button>;
+  return <button className="button specialButton">{specialCharacters}</button>;
 }
 
 export default SpecialButton;
