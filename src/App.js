@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 // STEP 4 - import the button and display components
 // Don't forget to import any extra css/scss files you build into the correct component
@@ -17,18 +17,56 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
+  const [display, setDisplay] = useState(0);
+
+  const handleNumberClick = number => {
+    let output = display === 0 ? "" : display;
+    output = output + number;
+    setDisplay(output);
+  };
+
+  const handleOperatorClick = operator => {
+    if (display === 0) {
+      return;
+    } else if (operator === "=") {
+      let output = eval(display);
+      setDisplay(output);
+    } else {
+      let output = display === 0 ? "" : display;
+      output = output + operator;
+      setDisplay(output);
+    }
+  };
+
+  const handleSpecialClick = special => {
+    // If you hit the "C" button, clear the display by setting it to 0
+    if (special === "C") {
+      setDisplay(0);
+    }
+
+    if (special === "%") {
+      let output = Number(display) / 100;
+      setDisplay(output);
+    }
+
+    if (special === "+/-") {
+      let output = Number(display) * -1;
+      setDisplay(output);
+    }
+  };
+
   return (
     <div className="container">
       <Logo />
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
-        <Display display={0} />
+        <Display display={display} />
         <div className="all-buttons">
           <div className="special-numbers">
-            <Specials />
-            <Numbers />
+            <Specials onClick={handleSpecialClick} />
+            <Numbers onClick={handleNumberClick} />
           </div>
-          <Operators />
+          <Operators onClick={handleOperatorClick} />
         </div>
       </div>
     </div>
