@@ -10,8 +10,13 @@ import React from "react";
 // };
 
 function SpecialButton(props) {
-  const { specialCharacters } = props;
-  return <button className="button specialButton">{specialCharacters}</button>;
+  const { character, onClick } = props;
+  const handleClick = () => onClick(character);
+  return (
+    <button onClick={handleClick} className="button specialButton">
+      {character}
+    </button>
+  );
 }
 
 export default SpecialButton;

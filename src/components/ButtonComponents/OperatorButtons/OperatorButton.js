@@ -9,8 +9,15 @@ import React from "react";
 // };
 
 function OperatorButton(props) {
-  const { char, value } = props;
-  return <button className="button operatorButton">{char}</button>;
+  const { char, value, onClick } = props;
+
+  const handleClick = () => onClick(value);
+
+  return (
+    <button onClick={handleClick} className="button operatorButton">
+      {char}
+    </button>
+  );
 }
 
 export default OperatorButton;

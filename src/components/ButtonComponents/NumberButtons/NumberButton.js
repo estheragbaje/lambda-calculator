@@ -2,8 +2,11 @@ import React from "react";
 
 function NumberButton(props) {
   const { digit, onClick } = props;
+
+  const handleClick = () => onClick(digit);
+
   return (
-    <button onClick={() => onClick(digit)} className="button numberButton">
+    <button onClick={handleClick} className="button numberButton">
       {digit}
     </button>
   );
