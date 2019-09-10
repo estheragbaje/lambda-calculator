@@ -1,8 +1,10 @@
 import React from "react";
 
-export const NumberButton = props => {
+function NumberButton(props) {
   const { digit } = props;
   return <button className="numberButton">{digit}</button>;
-};
+}
 
-// <NumberButton digit="1"/>
+// <NumberButton digit="1" onClick={...}/>
+
+export default NumberButton;
